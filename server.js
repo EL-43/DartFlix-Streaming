@@ -1,4 +1,10 @@
+require('dotenv').config();
 const express = require('express');
+const path = require('path');
+const sequelize = require('./db');
+const Film = require('./models/Film');
+
+// app
 const app = express();
 const port = 3000;
 
