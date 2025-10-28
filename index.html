@@ -1,11 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DartFlix | Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dartplex | Home</title>
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+    <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-content">
+        <div class="logo">Dartplex movie</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#series">TV Series</a></li>
+          <li><a href="#anime">Anime</a></li>
+          <li><a href="#my-list">My List</a></li>
+        </ul>
+        <div class="user-profile">
+          <button class="search-btn" onclick="toggleSearch()"></button>
+          <button class="profile-btn"></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar Menu (for mobile) -->
+    <div class="sidebar" id="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#movies">Movies</a></li>
+        <li><a href="#series">TV Series</a></li>
+        <li><a href="#anime">Anime</a></li>
+        <li><a href="#my-list">My List</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#help">Help</a></li>
+      </ul>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search movies, TV shows, anime..."
+          id="searchInput"
+        />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+
+    <!-- Video Player Overlay -->
+    <div class="video-overlay" id="videoOverlay">
+      <div class="video-player">
+        <button class="close-video" onclick="closeVideo()">✕</button>
+        <video id="mainVideo" controls>
+          <source src="your-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Unlimited Entertainment</h1>
+        <p>
+          Stream thousands of movies, TV shows, and anime series in stunning
+          quality. Watch anywhere, anytime, on any device.
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary" onclick="playVideo()"
+            >Start Watching</a
+          >
+          <a href="#features" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="content-section fade-in" id="trending">
+      <h2 class="section-title">Trending Now</h2>
+      <div class="content-grid">
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Action Blockbuster</div>
+          <div class="card-description">
+            Epic action sequences and thrilling adventures that keep you on the
+            edge of your seat.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Drama Series</div>
+          <div class="card-description">
+            Compelling stories with complex characters that explore the depths
+            of human emotion.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Fantasy Epic</div>
+          <div class="card-description">
+            Magical worlds filled with mythical creatures and legendary heroes
+            on epic quests.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Anime Collection</div>
+          <div class="card-description">
+            From classic series to the latest releases, discover amazing
+            animated stories.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="content-section fade-in" id="movies">
+      <h2 class="section-title">Popular Movies</h2>
+      <div class="content-grid">
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Superhero Chronicles</div>
+          <div class="card-description">
+            Join the ultimate battle between good and evil in this spectacular
+            superhero adventure.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Space Odyssey</div>
+          <div class="card-description">
+            A thrilling journey through the cosmos with stunning visuals and
+            mind-bending plot twists.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Mystery Thriller</div>
+          <div class="card-description">
+            Unravel the secrets in this gripping psychological thriller that
+            will keep you guessing.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Romantic Comedy</div>
+          <div class="card-description">
+            A heartwarming story of love, laughter, and second chances in the
+            big city.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TV Series Section -->
+    <section class="content-section fade-in" id="series">
+      <h2 class="section-title">Binge-Worthy Series</h2>
+      <div class="content-grid">
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Royal Dynasty</div>
+          <div class="card-description">
+            Political intrigue and family drama in this epic historical series
+            spanning generations.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Science Fiction</div>
+          <div class="card-description">
+            Explore parallel universes and advanced technology in this
+            mind-bending sci-fi series.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Medical Drama</div>
+          <div class="card-description">
+            Life and death decisions in the emergency room of a busy
+            metropolitan hospital.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Crime Investigation</div>
+          <div class="card-description">
+            Follow elite detectives as they solve the most complex criminal
+            cases.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anime Section -->
+    <section class="content-section fade-in" id="anime">
+      <h2 class="section-title">Latest Anime</h2>
+      <div class="content-grid">
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Power Academy</div>
+          <div class="card-description">
+            Young heroes train their supernatural abilities in this
+            action-packed school anime.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Samurai Legend</div>
+          <div class="card-description">
+            Honor, duty, and the way of the sword in feudal Japan's most
+            legendary tale.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Romance Blossom</div>
+          <div class="card-description">
+            A touching love story that blooms during Japan's beautiful cherry
+            blossom season.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Mecha Warriors</div>
+          <div class="card-description">
+            Giant robots and epic battles in this high-octane mecha anime
+            series.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="content-section" id="features">
+      <div class="features fade-in">
+        <h2 class="section-title">Why Choose Dartplex</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <h3 class="feature-title">4K Ultra HD</h3>
+            <p>
+              Experience crystal-clear picture quality with support for 4K Ultra
+              HD streaming on compatible devices.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <h3 class="feature-title">Any Device</h3>
+            <p>
+              Watch on your TV, computer, tablet, or smartphone - seamlessly
+              across all your devices.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <h3 class="feature-title">Download & Go</h3>
+            <p>
+              Download your favorite content to watch offline, perfect for
+              travel or when you're on the move.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <h3 class="feature-title">Family Friendly</h3>
+            <p>
+              Create separate profiles for family members with personalized
+              recommendations and parental controls.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <h3 class="feature-title">Global Content</h3>
+            <p>
+              Access content from around the world with subtitles and dubbing in
+              multiple languages.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <h3 class="feature-title">Auto-Resume</h3>
+            <p>
+              Pick up exactly where you left off on any device with seamless
+              cross-platform synchronization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My List Section -->
+    <section class="content-section fade-in" id="my-list">
+      <h2 class="section-title">My List</h2>
+      <div class="content-grid">
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Watchlist Item 1</div>
+          <div class="card-description">
+            Continue watching from where you left off or start something new
+            from your personal collection.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Recommended for You</div>
+          <div class="card-description">
+            Based on your viewing history, we think you'll love these
+            personalized recommendations.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Recently Added</div>
+          <div class="card-description">
+            Check out the latest additions to your watchlist and discover new
+            favorites.
+          </div>
+        </div>
+        <div class="content-card" onclick="playVideo()">
+          <div class="card-image"></div>
+          <div class="card-title">Favorites</div>
+          <div class="card-description">
+            Your most loved content all in one place for easy access anytime you
+            want.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#help">Help Center</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#contact">Contact Support</a>
+          <a href="#careers">Careers</a>
+          <a href="#press">Press</a>
+        </div>
+        <p>
+          &copy; 2026 dartplex. All rights reserved. Made with for entertainment
+          lovers.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Loading screen
+      window.addEventListener("load", () => {
+        document.getElementById("loading").style.display = "none";
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Search functionality
+      function toggleSearch() {
+        const searchOverlay = document.getElementById("searchOverlay");
+        const searchInput = document.getElementById("searchInput");
+
+        if (searchOverlay.style.display === "flex") {
+          searchOverlay.style.display = "none";
+        } else {
+          searchOverlay.style.display = "flex";
+          searchInput.focus();
+        }
+      }
+
+      // Close search when clicking outside
+      document
+        .getElementById("searchOverlay")
+        .addEventListener("click", (e) => {
+          if (e.target === e.currentTarget) {
+            toggleSearch();
+          }
+        });
+
+      // Search input functionality
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        const results = document.getElementById("searchResults");
+
+        if (query.length > 0) {
+          // Mock search results
+          const mockResults = [
+            "Action Blockbuster",
+            "Drama Series",
+            "Fantasy Epic",
+            "Anime Collection",
+            "Superhero Chronicles",
+            "Space Odyssey",
+          ].filter((item) => item.toLowerCase().includes(query));
+
+          results.innerHTML = mockResults
+            .map(
+              (result) =>
+                `<div style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: pointer;">${result}</div>`
+            )
+            .join("");
+        } else {
+          results.innerHTML = "";
+        }
+      });
+
+      // Video player functionality
+      function playVideo() {
+        const videoOverlay = document.getElementById("videoOverlay");
+        videoOverlay.style.display = "flex";
+      }
+
+      function closeVideo() {
+        const videoOverlay = document.getElementById("videoOverlay");
+        const video = document.getElementById("mainVideo");
+        videoOverlay.style.display = "none";
+        video.pause();
+      }
+
+      // Close video when clicking outside
+      document.getElementById("videoOverlay").addEventListener("click", (e) => {
+        if (e.target === e.currentTarget) {
+          closeVideo();
+        }
+      });
+
+      // Fade in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe all content cards and sections
+      document
+        .querySelectorAll(".content-card, .feature-item, .fade-in")
+        .forEach((element) => {
+          element.style.opacity = "0";
+          element.style.transform = "translateY(20px)";
+          element.style.transition = "all 0.6s ease-out";
+          observer.observe(element);
+        });
+
+      // Keyboard shortcuts
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          // Close any open overlays
+          document.getElementById("searchOverlay").style.display = "none";
+          closeVideo();
+        }
+        if (e.key === "/" && !e.target.matches("input")) {
+          e.preventDefault();
+          toggleSearch();
+        }
+      });
+
+      // Mobile menu toggle (if needed)
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("open");
+      }
+    </script>
 </body>
 </html>
