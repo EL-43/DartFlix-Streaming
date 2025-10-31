@@ -20,9 +20,20 @@
 
 ---
 
+## Environment Setup
+
+1. salin `.env.example` untuk membuat file `.env.` sendiri
+```
+cp .env.example .env
+```
+
+2. Ganti nilai-nilai placeholder di `.env` dengan konfigurasi asli (untuk sekarang):
+- `ACCESS_TOKEN_SECRET` = Token Access anda
+- `REFRESH_TOKEN_SECRET` = Token Refresh anda
+
 ## 🧩 Cara Menjalankan Proyek
 
-1. **Clone repositori ini**
+1. **Clone repo ini**
    ```
    git clone https://github.com/username/dartflix-streaming.git
    cd dartflix-streaming
