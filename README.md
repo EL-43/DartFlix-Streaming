@@ -4,14 +4,14 @@
 
 ---
 
-## 🚀 Status Proyek
-📅 **Tahap saat ini:** Inisialisasi struktur dasar  
-📁 **Struktur yang tersedia:**
+## Status Proyek
+**Tahap saat ini:** Inisialisasi struktur dasar  
+**Struktur yang tersedia:**
 
 
 ---
 
-## ⚙️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 - **Node.js** – untuk menjalankan server backend  
 - **Express.js** - untuk routing dan penyajian file statis  
 - **HTML5** – struktur halaman utama  
@@ -20,9 +20,20 @@
 
 ---
 
-## 🧩 Cara Menjalankan Proyek
+## Environment Setup
 
-1. **Clone repositori ini**
+1. salin `.env.example` untuk membuat file `.env.` sendiri
+```
+cp .env.example .env
+```
+
+2. Ganti nilai-nilai placeholder di `.env` dengan konfigurasi asli (untuk sekarang):
+- `ACCESS_TOKEN_SECRET` = Token Access anda
+- `REFRESH_TOKEN_SECRET` = Token Refresh anda
+
+## Cara Menjalankan Proyek
+
+1. **Clone repo ini**
    ```
    git clone https://github.com/username/dartflix-streaming.git
    cd dartflix-streaming
@@ -32,7 +43,7 @@
     node server.js
     ```
 
-## 🧑‍💻 Kontributor
+## Kontributor
 1. Darren (Project Manager)
 2. Daniel Kurnia G. (Deputy Manager)
 3. Tito Shafy (UI/UX Designer)

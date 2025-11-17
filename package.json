@@ -1,5 +1,30 @@
 {
+<<<<<<< HEAD
   "dependencies": {
+=======
+  "name": "dartflix-streaming",
+  "version": "1.0.0",
+  "description": "**DartFlix Streaming** adalah proyek web streaming sederhana yang sedang dikembangkan. Tujuannya adalah membuat platform mirip layanan streaming film atau video, dengan backend berbasis **Node.js** dan frontend berbasis **HTML, CSS, dan JavaScript**.",
+  "homepage": "https://github.com/EL-43/DartFlix-Streaming#readme",
+  "bugs": {
+    "url": "https://github.com/EL-43/DartFlix-Streaming/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EL-43/DartFlix-Streaming.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+>>>>>>> e048cbdf74ab09a2aa2cef09db03403ad37b25c7
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",

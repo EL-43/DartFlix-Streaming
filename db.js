@@ -1,6 +1,5 @@
 // db.js
 // NOTES: this is the database logic, please edit if needed
-
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
