@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/* Darkplex.css - A sleek, modern CSS theme for a streaming service website */
->>>>>>> e048cbdf74ab09a2aa2cef09db03403ad37b25c7
 * {
     margin: 0;
     padding: 0;
@@ -17,11 +13,7 @@ body {
 
 /* Header/Navigation */
 .navbar {
-<<<<<<< HEAD
     position: relative;
-=======
-    position: fixed;
->>>>>>> e048cbdf74ab09a2aa2cef09db03403ad37b25c7
     top: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.9);
