@@ -4,14 +4,14 @@
 
 ---
 
-## 🚀 Status Proyek
-📅 **Tahap saat ini:** Inisialisasi struktur dasar  
-📁 **Struktur yang tersedia:**
+## Status Proyek
+**Tahap saat ini:** Inisialisasi struktur dasar  
+**Struktur yang tersedia:**
 
 
 ---
 
-## ⚙️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 - **Node.js** – untuk menjalankan server backend  
 - **Express.js** - untuk routing dan penyajian file statis  
 - **HTML5** – struktur halaman utama  
@@ -31,7 +31,7 @@ cp .env.example .env
 - `ACCESS_TOKEN_SECRET` = Token Access anda
 - `REFRESH_TOKEN_SECRET` = Token Refresh anda
 
-## 🧩 Cara Menjalankan Proyek
+## Cara Menjalankan Proyek
 
 1. **Clone repo ini**
    ```
@@ -43,7 +43,7 @@ cp .env.example .env
     node server.js
     ```
 
-## 🧑‍💻 Kontributor
+## Kontributor
 1. Darren (Project Manager)
 2. Daniel Kurnia G. (Deputy Manager)
 3. Tito Shafy (UI/UX Designer)
