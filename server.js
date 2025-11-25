@@ -43,7 +43,7 @@ function authenticateToken (req, res, next){
 }
 
 app.get('/', (req, res) => {
-    res.writeHead(2000, {'content-type' : 'text/html'});
+    res.writeHead(200, {'content-type' : 'text/html'});
     res.end();
 })
 

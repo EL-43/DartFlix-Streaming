@@ -1,7 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-=======
   "name": "dartflix-streaming",
   "version": "1.0.0",
   "description": "**DartFlix Streaming** adalah proyek web streaming sederhana yang sedang dikembangkan. Tujuannya adalah membuat platform mirip layanan streaming film atau video, dengan backend berbasis **Node.js** dan frontend berbasis **HTML, CSS, dan JavaScript**.",
@@ -24,7 +21,6 @@
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
->>>>>>> e048cbdf74ab09a2aa2cef09db03403ad37b25c7
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
