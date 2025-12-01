@@ -1,7 +1,46 @@
-// Loading screen
+// Function to check login status and update UI
+function checkAuthStatus() {
+  const isLoggedIn = localStorage.getItem("dartflix_logged_in") === "true";
+  const guestView = document.getElementById("guest-view");
+  const userView = document.getElementById("user-view");
+
+  if (isLoggedIn) {
+    if (guestView) guestView.style.display = "none";
+    if (userView) userView.style.display = "flex";
+  } else {
+    if (guestView) guestView.style.display = "flex";
+    if (userView) userView.style.display = "none";
+  }
+}
+
+// Run on page load
 window.addEventListener("load", () => {
+  // Hide loading screen
   document.getElementById("loading").style.display = "none";
+  
+  // Check auth
+  checkAuthStatus();
 });
+
+// Handle Sign In
+const loginBtn = document.getElementById("loginBtn");
+if (loginBtn) {
+  loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("dartflix_logged_in", "true");
+    checkAuthStatus();
+  });
+}
+
+// Handle Log Out
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("dartflix_logged_in", "false");
+    checkAuthStatus();
+  });
+}
 
 // Navbar scroll effect
 window.addEventListener("scroll", () => {
@@ -55,7 +94,6 @@ document.getElementById("searchInput").addEventListener("input", (e) => {
   const results = document.getElementById("searchResults");
 
   if (query.length > 0) {
-    // Mock search results
     const mockResults = [
       "Action Blockbuster",
       "Drama Series",
@@ -124,8 +162,8 @@ document
 // Keyboard shortcuts
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    // Close any open overlays
-    document.getElementById("searchOverlay").style.display = "none";
+    const searchOverlay = document.getElementById("searchOverlay");
+    if (searchOverlay) searchOverlay.style.display = "none";
     closeVideo();
   }
   if (e.key === "/" && !e.target.matches("input")) {
