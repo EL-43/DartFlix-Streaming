@@ -1,0 +1,164 @@
+/* packages/client/src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #e50914;
+    --color-primary-light: #ff6b35;
+    --color-dark-900: #0f0f23;
+    --color-dark-800: #1a1a2e;
+    --color-dark-700: #0e0e0f;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    @apply bg-gradient-dark text-white overflow-x-hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #e50914, #ff6b35);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff6b35, #e50914);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/30 backdrop-blur-xl border border-white/10;
+  }
+
+  .content-card {
+    @apply bg-white/5 rounded-2xl p-5 transition-all duration-300 cursor-pointer relative overflow-hidden;
+  }
+
+  .content-card:hover {
+    @apply -translate-y-2.5 scale-[1.02] shadow-[0_20px_40px_rgba(229,9,20,0.3)];
+  }
+
+  .content-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-light/10 opacity-0 transition-opacity duration-300;
+  }
+
+  .content-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .card-image {
+    @apply w-full h-48 bg-gradient-to-r from-gray-800 to-gray-600 rounded-xl mb-4 flex items-center justify-center text-5xl relative overflow-hidden;
+  }
+
+  .card-image::before {
+    content: '▶';
+    @apply opacity-0 transition-opacity duration-300 text-primary;
+  }
+
+  .content-card:hover .card-image::before {
+    @apply opacity-100;
+  }
+
+  .btn {
+    @apply px-8 py-4 border-none rounded-lg text-base font-bold cursor-pointer transition-all duration-300 no-underline inline-block;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-primary text-white;
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-1 shadow-[0_10px_25px_rgba(229,9,20,0.4)];
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 text-white border-2 border-white/30;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-white/20 border-primary;
+  }
+
+  .text-gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-white {
+    @apply bg-gradient-to-r from-white to-primary bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary-light;
+  }
+
+  .bg-gradient-dark {
+    @apply bg-gradient-to-br from-dark-900 via-dark-800 to-dark-700;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+
+  .animate-spin-slow {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
