@@ -1,4 +1,3 @@
-// packages/client/src/pages/AnimePage.jsx
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

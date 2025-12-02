@@ -1,4 +1,3 @@
-// packages/client/src/pages/HomePage.jsx
 import React from 'react';
 import { useOutletContext, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

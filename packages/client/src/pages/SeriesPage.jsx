@@ -1,4 +1,3 @@
-// packages/client/src/pages/SeriesPage.jsx
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

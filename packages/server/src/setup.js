@@ -1,4 +1,3 @@
-// packages/server/src/setup.js
 import mysql from 'mysql2/promise';
 import fs from 'fs';
 import path from 'path';

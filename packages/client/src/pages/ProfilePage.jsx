@@ -1,4 +1,3 @@
-// packages/client/src/pages/ProfilePage.jsx
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

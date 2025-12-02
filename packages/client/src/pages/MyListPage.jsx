@@ -1,4 +1,3 @@
-// packages/client/src/pages/MyListPage.jsx
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';

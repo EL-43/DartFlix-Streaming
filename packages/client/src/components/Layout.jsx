@@ -1,4 +1,3 @@
-// packages/client/src/components/Layout.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';

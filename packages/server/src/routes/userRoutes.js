@@ -1,4 +1,3 @@
-// packages/server/src/routes/userRoutes.js
 import express from 'express';
 import { authenticateToken } from '../middleware/auth.js';
 

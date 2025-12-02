@@ -1,4 +1,3 @@
-// packages/client/src/pages/SettingsPage.jsx
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
