@@ -28,6 +28,7 @@ export default function Layout() {
     const [videoOpen, setVideoOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
+    const [currentVideoSrc, setCurrentVideoSrc] = useState('');
     const mainVideoRef = useRef(null);
 
     useEffect(() => {
@@ -43,16 +44,17 @@ export default function Layout() {
     }, [searchQuery]);
 
     function playVideo(src) {
-        setVideoOpen(true);
-        if (mainVideoRef.current && src) {
-            mainVideoRef.current.src = src;
+        if (src) {
+            setCurrentVideoSrc(src);
         }
-        setTimeout(() => mainVideoRef.current?.play?.(), 50);
+        setVideoOpen(true);
+        setTimeout(() => mainVideoRef.current?.play?.(), 100);
     }
 
     function closeVideo() {
         mainVideoRef.current?.pause?.();
         setVideoOpen(false);
+        setCurrentVideoSrc(''); 
     }
 
     const navItems = [
@@ -73,8 +75,8 @@ export default function Layout() {
     return (
         <div className="min-h-screen relative">
             {/* Navigation */}
-            <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-lg py-4 px-4 md:px-12 z-50 transition-all duration-300">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-lg py-4 px-2 md:px-4 z-50 transition-all duration-300">
+                <div className="w-full flex justify-between items-center">
                     <Link to="/" className="text-2xl font-bold text-gradient-primary">
                         DartFlix
                     </Link>
@@ -180,7 +182,7 @@ export default function Layout() {
                         <div className="relative">
                             <input
                                 type="text"
-                                className="w-full p-4 md:p-5 text-lg border-none rounded-full bg-white/10 text-white backdrop-blur-lg placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-primary pl-12"
+                                className="w-full p-4 md:p-5 text-lg border-none rounded-full bg-white/10 text-white backdrop-blur-lg placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-primary pl-14 md:pl-16 pr-16"
                                 placeholder="Search movies, TV shows, anime..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -232,8 +234,13 @@ export default function Layout() {
                         >
                             <FontAwesomeIcon icon={faTimes} />
                         </button>
-                        <video ref={mainVideoRef} controls className="w-full h-full rounded-2xl">
-                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+                        
+                        <video 
+                            ref={mainVideoRef} 
+                            controls 
+                            className="w-full h-full rounded-2xl"
+                            src={currentVideoSrc || "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"}
+                        >
                             Your browser does not support the video tag.
                         </video>
                     </div>
